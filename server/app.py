@@ -12,7 +12,7 @@ import time
 
 import socket
 HOST = "0.0.0.0"
-PORT = 7000
+PORT = 9999
 
 
 app = Flask(__name__)
@@ -283,13 +283,13 @@ def order_delete():
         db.session.delete(data)
         db.session.commit()
         # robot back to origin pose
-        table_no = data.tableno
-        data_to_send = str(int(table_no) *-1)
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect((HOST, PORT))
-        s.send(data_to_send.encode())
+        #table_no = data.tableno
+        #data_to_send = str(int(table_no) *-1)
+        #s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        #s.connect((HOST, PORT))
+        #s.send(data_to_send.encode())
         
-        s.close()
+        #s.close()
         return 'Done'
 
 #return Order(s)
